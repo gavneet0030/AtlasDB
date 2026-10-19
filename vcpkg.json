@@ -1,0 +1,6 @@
+{
+  "name": "atlasdb",
+  "version-string": "0.1.0",
+  "description": "High-performance analytical database engine",
+  "dependencies": []
+}

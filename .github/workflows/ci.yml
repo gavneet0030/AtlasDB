@@ -1,0 +1,47 @@
+name: AtlasDB CI
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  linux-debug:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install build tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y cmake ninja-build g++
+
+      - name: Configure
+        run: cmake --preset linux-debug
+
+      - name: Build
+        run: cmake --build --preset debug --parallel 2
+
+      - name: Test
+        run: ctest --preset debug
+
+  linux-release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install build tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y cmake ninja-build g++
+
+      - name: Configure
+        run: cmake --preset linux-release
+
+      - name: Build
+        run: cmake --build --preset release --parallel 2
+
+      - name: Test
+        run: ctest --preset release

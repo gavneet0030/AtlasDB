@@ -1,0 +1,12 @@
+{
+  "recommendations": [
+    "ms-vscode.cpptools",
+    "ms-vscode.cmake-tools",
+    "ms-vscode.cpptools-extension-pack",
+    "ms-vscode-remote.remote-wsl",
+    "ms-python.python",
+    "ms-python.vscode-pylance",
+    "ms-azuretools.vscode-docker",
+    "eamodio.gitlens"
+  ]
+}

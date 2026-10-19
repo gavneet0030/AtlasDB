@@ -1,0 +1,9 @@
+.git
+build
+.venv
+__pycache__
+data/raw
+data/processed
+benchmarks/datasets
+results
+artifacts

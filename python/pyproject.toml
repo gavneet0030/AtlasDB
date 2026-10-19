@@ -1,0 +1,15 @@
+[project]
+name = "atlasdb-tools"
+version = "0.1.0"
+description = "Dataset generation, benchmark analysis and reference validation for AtlasDB"
+requires-python = ">=3.11"
+dependencies = [
+    "pandas>=2.2,<4.0",
+    "numpy>=2.0,<3.0",
+    "matplotlib>=3.9,<4.0",
+    "duckdb>=1.2,<2.0",
+    "pyarrow>=19.0,<30.0"
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

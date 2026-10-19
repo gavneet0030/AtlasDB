@@ -1,0 +1,59 @@
+{
+    "version":  6,
+    "cmakeMinimumRequired":  {
+                                 "major":  3,
+                                 "minor":  25,
+                                 "patch":  0
+                             },
+    "configurePresets":  [
+                             {
+                                 "name":  "linux-debug",
+                                 "displayName":  "Linux Debug",
+                                 "generator": "Unix Makefiles",
+                                 "binaryDir":  "${sourceDir}/build/linux-debug",
+                                 "cacheVariables":  {
+                                                        "CMAKE_BUILD_TYPE":  "Debug",
+                                                        "ATLASDB_BUILD_TESTS":  "ON",
+                                                        "ATLASDB_ENABLE_WARNINGS":  "ON",
+                                                        "ATLASDB_ENABLE_SANITIZERS":  "OFF"
+                                                    }
+                             },
+                             {
+                                 "name":  "linux-release",
+                                 "displayName":  "Linux Release",
+                                 "generator": "Unix Makefiles",
+                                 "binaryDir":  "${sourceDir}/build/linux-release",
+                                 "cacheVariables":  {
+                                                        "CMAKE_BUILD_TYPE":  "Release",
+                                                        "ATLASDB_BUILD_TESTS":  "ON",
+                                                        "ATLASDB_ENABLE_WARNINGS":  "ON"
+                                                    }
+                             }
+                         ],
+    "buildPresets":  [
+                         {
+                             "name":  "debug",
+                             "configurePreset":  "linux-debug"
+                         },
+                         {
+                             "name":  "release",
+                             "configurePreset":  "linux-release"
+                         }
+                     ],
+    "testPresets":  [
+                        {
+                            "name":  "debug",
+                            "configurePreset":  "linux-debug",
+                            "output":  {
+                                           "outputOnFailure":  true
+                                       }
+                        },
+                        {
+                            "name":  "release",
+                            "configurePreset":  "linux-release",
+                            "output":  {
+                                           "outputOnFailure":  true
+                                       }
+                        }
+                    ]
+}

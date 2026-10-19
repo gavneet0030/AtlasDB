@@ -1,0 +1,71 @@
+# Build output
+build/
+cmake-build-*/
+out/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+compile_commands.json
+Testing/
+
+# IDE
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/tasks.json
+.idea/
+*.user
+*.suo
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# Data and experiment outputs
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+benchmarks/datasets/*
+!benchmarks/datasets/.gitkeep
+results/*
+!results/.gitkeep
+artifacts/*
+!artifacts/.gitkeep
+
+# Local configuration
+.env
+.env.*
+!.env.example
+CMakeUserPresets.json
+.vcpkg_installed/
+
+# OS
+.DS_Store
+Thumbs.db
+*.swp
+*.tmp
+
+# AtlasDB local build outputs
+/build-release/
+/build-win/
+/build-wsl/
+
+# Local database runtime files and logs
+/data/*.manifest
+/data/*.adb
+/atlasdb-build-log.txt
+
+# Local backups and historical CMake snapshots
+/backups/
+/CMakeLists.txt.*.bak
+# Local source and test backup files
+*.bak
+# Timestamped local backup files
+*.bak-*
